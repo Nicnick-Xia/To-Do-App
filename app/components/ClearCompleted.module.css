@@ -1,0 +1,27 @@
+.button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: oklch(0.15 0.02 280 / 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  border-radius: 16px;
+  color: oklch(0.7 0.05 280);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: oklch(0.15 0.02 280 / 0.1);
+  color: white;
+}
+
+.button:focus-visible {
+  outline: 2px solid oklch(0.7 0.2 280);
+  outline-offset: 2px;
+}

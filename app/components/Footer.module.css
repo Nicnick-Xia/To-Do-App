@@ -1,0 +1,36 @@
+.footer {
+  margin-top: 2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: oklch(0.7 0.05 280 / 0.6);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: oklch(0.15 0.02 280 / 0.05);
+  border-radius: 9999px;
+  color: oklch(0.7 0.05 280 / 0.6);
+  font-size: 0.875rem;
+  margin: 0 auto;
+}

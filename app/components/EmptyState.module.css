@@ -1,0 +1,66 @@
+.container {
+  background: oklch(0.15 0.02 280 / 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: oklch(0.7 0.05 280);
+  font-size: 1.125rem;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.star {
+  color: oklch(0.8 0.15 50);
+  animation: sparkle 2s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emoji,
+  .star {
+    animation: none;
+  }
+}

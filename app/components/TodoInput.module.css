@@ -1,0 +1,84 @@
+.form {
+  margin-bottom: 2rem;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.inputWrapper:focus-within {
+  transform: scale(1.02);
+}
+
+.input {
+  width: 100%;
+  padding: 1.25rem 1rem 1.25rem 3.5rem;
+  background: oklch(0.15 0.02 280 / 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  border-radius: 16px;
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.input::placeholder {
+  color: oklch(0.7 0.05 280 / 0.5);
+}
+
+.input:focus {
+  outline: none;
+  border-color: oklch(0.7 0.2 280 / 0.5);
+  background: oklch(0.15 0.02 280 / 0.12);
+}
+
+.icon {
+  position: absolute;
+  left: 1.25rem;
+  color: oklch(0.7 0.05 280 / 0.5);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.iconFocused {
+  color: oklch(0.7 0.2 280);
+  transform: scale(1.1);
+}
+
+.submitButton {
+  position: absolute;
+  right: 0.75rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, oklch(0.7 0.2 280), oklch(0.7 0.25 320));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  box-shadow: 0 4px 12px oklch(0.7 0.2 280 / 0.3);
+  transform: scale(0.95);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.submitButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.submitButton[data-disabled="true"] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

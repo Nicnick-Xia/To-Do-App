@@ -1,0 +1,144 @@
+.container {
+  min-height: 100vh;
+  background: oklch(0.04 0.01 280);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-geist-sans, system-ui, sans-serif);
+}
+
+.main {
+  position: relative;
+  z-index: 10;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* 背景动画 */
+.background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradientWrapper {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gradient1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, oklch(0.65 0.2 280 / 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.gradient2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, oklch(0.6 0.2 260 / 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.floatingElement1 {
+  position: fixed;
+  top: 5rem;
+  left: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  background: radial-gradient(circle, oklch(0.65 0.2 290 / 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatingElement2 {
+  position: fixed;
+  bottom: 5rem;
+  right: 2.5rem;
+  width: 8rem;
+  height: 8rem;
+  background: radial-gradient(circle, oklch(0.6 0.2 200 / 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.floatingElement3 {
+  position: fixed;
+  top: 33%;
+  right: 5rem;
+  width: 4rem;
+  height: 4rem;
+  background: radial-gradient(circle, oklch(0.65 0.2 30 / 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 7s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 加载状态 */
+.loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: oklch(0.04 0.01 280);
+  color: oklch(0.7 0.05 280);
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid oklch(0.7 0.2 280 / 0.3);
+  border-top-color: oklch(0.7 0.2 280);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingText {
+  font-size: 0.875rem;
+}
+
+/* 减少动画 */
+@media (prefers-reduced-motion: reduce) {
+  .gradientWrapper,
+  .floatingElement1,
+  .floatingElement2,
+  .floatingElement3,
+  .spinner {
+    animation: none;
+  }
+}

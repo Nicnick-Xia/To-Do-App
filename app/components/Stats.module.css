@@ -1,0 +1,80 @@
+.container {
+  background: oklch(0.15 0.02 280 / 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  border-radius: 24px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.count {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.label {
+  color: oklch(0.7 0.05 280);
+  font-size: 0.875rem;
+}
+
+.completedWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: oklch(0.7 0.05 280);
+  font-size: 0.875rem;
+}
+
+.heartIcon {
+  color: oklch(0.75 0.2 340);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.progressContainer {
+  margin-top: 0.5rem;
+}
+
+.progressTrack {
+  height: 12px;
+  background: oklch(1 0 0 / 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, oklch(0.7 0.2 280), oklch(0.7 0.25 320), oklch(0.75 0.2 340));
+  border-radius: 9999px;
+  transition: width 0.7s ease-out;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: oklch(0.7 0.05 280 / 0.6);
+}

@@ -1,0 +1,118 @@
+.item {
+  position: relative;
+  background: oklch(0.15 0.02 280 / 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.item:hover {
+  background: oklch(0.15 0.02 280 / 0.1);
+  border-color: oklch(1 0 0 / 0.2);
+  box-shadow: 0 8px 32px oklch(0.7 0.2 280 / 0.1);
+  transform: translateX(4px);
+}
+
+.item.completed {
+  opacity: 0.5;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 2px solid oklch(0.6 0.05 280);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.checkbox:hover:not(:disabled) {
+  border-color: oklch(0.7 0.2 280);
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid oklch(0.7 0.2 280);
+  outline-offset: 2px;
+}
+
+.checkbox.checkboxChecked {
+  background: linear-gradient(135deg, oklch(0.7 0.2 280), oklch(0.7 0.25 320));
+  border-color: transparent;
+  box-shadow: 0 4px 12px oklch(0.7 0.2 280 / 0.3);
+}
+
+.text {
+  flex: 1;
+  font-size: 1.125rem;
+  color: white;
+  line-height: 1.5;
+  word-break: break-word;
+  text-decoration: line-through;
+  text-decoration-color: oklch(0.7 0.05 280);
+  text-decoration-thickness: 2px;
+  opacity: 0.6;
+}
+
+.deleteButton {
+  opacity: 0;
+  padding: 0.625rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: oklch(0.7 0.05 280 / 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteButton:hover {
+  background: oklch(0 0 0 / 0.1);
+  color: oklch(0.6 0.2 20);
+}
+
+.deleteButton:focus-visible {
+  opacity: 1;
+  outline: 2px solid oklch(0.7 0.2 280);
+  outline-offset: 2px;
+}
+
+@media (hover: none) {
+  .deleteButton {
+    opacity: 0.6;
+  }
+}
+
+.item:hover .deleteButton {
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, oklch(0.7 0.2 280), oklch(0.7 0.25 320));
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.indicator.indicatorVisible {
+  opacity: 1;
+}
